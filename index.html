@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>时间实验室 · Time Lab</title>
+  <meta name="description" content="一个关于时间的小网页：此刻、刻度和你的倒计时。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-kicker">Time Lab</p>
+        <h1>和时间打个招呼</h1>
+        <p class="hero-sub">
+          看见此刻，感受一整天、一整年，以及你在期待的那一刻。
+        </p>
+        <div class="hero-actions">
+          <a href="#now" class="btn primary">现在这一秒</a>
+          <a href="#countdown" class="btn ghost">设置一个倒计时</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 此刻 -->
+    <section id="now" class="section">
+      <div class="section-heading">
+        <h2>01 · 此刻</h2>
+        <p>世界在同一时间，慢慢走过不同的时区。</p>
+      </div>
+
+      <div class="grid grid-2">
+        <!-- 大号当前时间 -->
+        <div class="card big-clock">
+          <h3>你的当前时间</h3>
+          <div class="clock-display">
+            <div id="clock-time" class="clock-time">--:--:--</div>
+            <div id="clock-date" class="clock-date">加载中...</div>
+          </div>
+          <div class="control-row">
+            <label for="timezone-select">查看时区：</label>
+            <select id="timezone-select">
+              <option value="local">本地时间</option>
+              <option value="Asia/Shanghai">北京</option>
+              <option value="Europe/London">伦敦</option>
+              <option value="America/New_York">纽约</option>
+              <option value="Asia/Tokyo">东京</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 世界时区 -->
+        <div class="card world-time">
+          <h3>世界时区一瞥</h3>
+          <div class="world-grid">
+            <div class="mini-clock">
+              <div class="mini-label">北京</div>
+              <div id="time-bj" class="mini-time">--:--:--</div>
+            </div>
+            <div class="mini-clock">
+              <div class="mini-label">伦敦</div>
+              <div id="time-ldn" class="mini-time">--:--:--</div>
+            </div>
+            <div class="mini-clock">
+              <div class="mini-label">纽约</div>
+              <div id="time-ny" class="mini-time">--:--:--</div>
+            </div>
+            <div class="mini-clock">
+              <div class="mini-label">东京</div>
+              <div id="time-tyo" class="mini-time">--:--:--</div>
+            </div>
+          </div>
+          <p class="hint">同一刻，不同地理坐标下的时间读数。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 时间刻度 -->
+    <section id="progress" class="section section-alt">
+      <div class="section-heading">
+        <h2>02 · 时间的刻度</h2>
+        <p>一天、一年，都在不动声色地向前推进。</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>今天的进度</h3>
+          <p class="hint">从 00:00 到 23:59，一天的时间条。</p>
+          <div class="progress">
+            <div id="day-progress-bar" class="progress-bar"></div>
+          </div>
+          <div id="day-progress-text" class="progress-text">今天已过去 0%</div>
+        </div>
+
+        <div class="card">
+          <h3>今年的进度</h3>
+          <p class="hint">从 1 月 1 日到 12 月 31 日，一年的刻度。</p>
+          <div class="progress">
+            <div id="year-progress-bar" class="progress-bar"></div>
+          </div>
+          <div id="year-progress-text" class="progress-text">今年已过去 0%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 倒计时 -->
+    <section id="countdown" class="section">
+      <div class="section-heading">
+        <h2>03 · 你的倒计时</h2>
+        <p>选择一个你在意的时刻，看看还有多久。</p>
+      </div>
+
+      <div class="grid grid-2">
+        <form id="countdown-form" class="card form-card">
+          <h3>设置目标时间</h3>
+
+          <div class="field">
+            <label for="target-date">日期</label>
+            <input type="date" id="target-date" required>
+          </div>
+
+          <div class="field">
+            <label for="target-time">时间（可选）</label>
+            <input type="time" id="target-time">
+          </div>
+
+          <button type="submit" class="btn primary full">开始倒计时</button>
+          <p class="hint small">提示：不填时间时，默认为当天 00:00。</p>
+        </form>
+
+        <div class="card countdown-display">
+          <h3>时间差</h3>
+          <p id="countdown-label" class="countdown-label">尚未设置目标时间。</p>
+          <p id="countdown-detail" class="countdown-detail">——</p>
+          <p class="hint small">无论是期待，还是回望，都是和时间的一次对话。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with ⏳ · 静态网页，适合部署到 Cloudflare Pages</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
