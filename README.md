@@ -10,7 +10,7 @@
 
 你可以在这里访问 Time Lab：
 
-🔗 [https://akina005.github.io/time-lab/](https://你的用户名.github.io/你的仓库吗/)
+https://akina005.github.io/time-lab/
 
 ---
 
@@ -97,5 +97,6 @@
 ## 📷 截图预览
 
 ![Time Lab Screenshot](https://your-image-link-here)  <!-- 可替换成实际截图链接 -->
+
 
 
